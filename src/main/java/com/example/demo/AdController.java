@@ -11,9 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
-
 /**
- * Created by Admin on 2018/10/19.
+ * @ProjectName: ad
+ * @Package: com.example.demo
+ * @ClassName: AdController
+ * @Description: 广告控制类，获取广告信息
+ * @Author: hingbox@163.com
+ * @CreateDate: 2018/10/18 09:27
+ * @UpdateUser: 更新者
+ * @UpdateDate: 2018/10/18 09:27
+ * @UpdateRemark: 更新说明
+ * @Version: 1.0
  */
 @RestController
 public class AdController {

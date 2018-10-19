@@ -5,9 +5,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-
 /**
- * Created by Admin on 2018/10/17.
+ * @ProjectName: ad
+ * @Package: com.example.demo
+ * @ClassName: CorsConfig
+ * @Description: 客户端请求跨域容许
+ * @Author: hingbox@163.com
+ * @CreateDate: 2018/10/18 10:27
+ * @UpdateUser: 更新者
+ * @UpdateDate: 2018/10/18 10:27
+ * @UpdateRemark: 更新说明
+ * @Version: 1.0
  */
 @Configuration
 public class CorsConfig {
