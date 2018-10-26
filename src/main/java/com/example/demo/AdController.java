@@ -45,9 +45,7 @@ public class AdController {
                 id="14F7FD39E4C0E33D681ECD75F7B9B127";
             }
         } else {
-            CheckObject c = new CheckObject();
-            c.setCode("101");
-            c.setMessage("广告ID不能为空!");
+            CheckObject c = new CheckObject("101","广告ID不能为空!");
             String json = JSON.toJSON(c).toString();
             return json;
         }
@@ -70,8 +68,15 @@ public class AdController {
         HttpHeaders headers = new HttpHeaders(); headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> entity = new HttpEntity<String>(reqJsonStr,headers);
         ResponseEntity<Map> resp = restTemplate.exchange("http://ggx.cmvideo.cn/request/api10", HttpMethod.POST, entity, Map.class);
-        JSONObject responseBody  = new JSONObject(resp.getBody());
-        return responseBody.toString();
+        if (resp.getStatusCodeValue() == 204) {
+            CheckObject c = new CheckObject("204","暂无广告内容!");
+            String json = JSON.toJSON(c).toString();
+            return json;
+        }else{
+            JSONObject responseBody  = new JSONObject(resp.getBody());
+            return responseBody.toString();
+        }
+
 
     }
 }
